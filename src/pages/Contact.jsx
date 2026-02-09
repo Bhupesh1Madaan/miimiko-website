@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Send, Mail, Phone, Clock } from 'lucide-react';
 
 export default function Contact() {
     const [formSubmitted, setFormSubmitted] = useState(false);
@@ -608,12 +608,8 @@ export default function Contact() {
                         }}>
                             Our team will provide personalized pricing based on your requirements and course selection
                         </p>
-                        <a
-                            href="#"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }}
+                        <button
+                            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                             style={{
                                 display: 'inline-block',
                                 background: '#7a004b',
@@ -624,13 +620,16 @@ export default function Contact() {
                                 fontWeight: 700,
                                 fontSize: '1.1rem',
                                 transition: 'transform 0.3s ease',
-                                boxShadow: '0 6px 20px rgba(122, 0, 75, 0.4)'
+                                boxShadow: '0 6px 20px rgba(122, 0, 75, 0.4)',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontFamily: 'inherit'
                             }}
                             onMouseEnter={(e) => e.target.style.transform = 'translateY(-3px)'}
                             onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}
                         >
                             Raise a Query
-                        </a>
+                        </button>
                     </div>
                 </div>
             </section>

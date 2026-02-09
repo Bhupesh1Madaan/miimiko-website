@@ -135,6 +135,7 @@ export default function Courses() {
                 setModalOpen(true);
             }
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const openModal = (course) => {

@@ -19,7 +19,7 @@ export default function Footer() {
             }}>
                 {/* Logo & Tagline */}
                 <div>
-                    <img src="/5.png" alt="Miimiko" style={{ height: '70px', marginBottom: '1rem' }} />
+                    <img src="/assets/logo.png" alt="Miimiko" style={{ height: '70px', marginBottom: '1rem' }} />
                     <p style={{
                         fontSize: '1.1rem',
                         lineHeight: 1.7,
@@ -227,7 +227,7 @@ export default function Footer() {
                         Follow Us
                     </h4>
                     <div style={{ display: 'flex', gap: '1.5rem' }}>
-                        <a href="#" style={{
+                        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{
                             background: 'linear-gradient(135deg, #ffc857 0%, #ff9a57 100%)',
                             padding: '0.8rem',
                             borderRadius: '50%',
@@ -248,7 +248,7 @@ export default function Footer() {
                         >
                             <Instagram size={24} color="#7a004b" />
                         </a>
-                        <a href="#" style={{
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{
                             background: 'linear-gradient(135deg, #ffc857 0%, #ff9a57 100%)',
                             padding: '0.8rem',
                             borderRadius: '50%',
@@ -269,7 +269,7 @@ export default function Footer() {
                         >
                             <Facebook size={24} color="#7a004b" />
                         </a>
-                        <a href="#" style={{
+                        <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" style={{
                             background: 'linear-gradient(135deg, #ffc857 0%, #ff9a57 100%)',
                             padding: '0.8rem',
                             borderRadius: '50%',
