@@ -1,0 +1,275 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ContactForm from '../components/forms/ContactForm';
+import Button from '../components/layout/Button';
+
+const WHY_JOIN = [
+    { icon: '🌍', title: 'Work From Anywhere', desc: 'Fully remote — teach from your home, your city, your country. All you need is a good internet connection and a passion for art.' },
+    { icon: '📅', title: 'Flexible Schedule', desc: 'You choose when you teach. Morning batches, afternoon, evening — build a schedule that fits your life, not the other way around.' },
+    { icon: '💰', title: 'Transparent Pay', desc: 'Competitive, clearly structured compensation. No hidden clauses. You know exactly what you earn per class, every time.' },
+    { icon: '🎓', title: 'Grow with Us', desc: 'Access to pedagogy workshops, peer feedback sessions, and curriculum training. We invest in our teachers continuously.' },
+    { icon: '🌟', title: 'Global Impact', desc: 'Your lessons reach children in 50+ countries. Few career choices give you this scale of meaningful impact from a single session.' },
+    { icon: '🤝', title: 'Supportive Community', desc: 'Join a team of passionate educators who share resources, ideas, and support. You\'re never teaching alone.' },
+];
+
+const POSITIONS = [
+    {
+        id: 'expert',
+        icon: '👩‍🎨',
+        iconClass: 'expert',
+        title: 'Online Art Teacher',
+        tags: [
+            { label: 'Remote', cls: 'remote' },
+            { label: 'Part-time', cls: 'parttime' },
+            { label: 'Flexible', cls: 'flexible' },
+        ],
+        summary: 'Teach live online art classes to children aged 5–14 in your specialised medium.',
+        requirements: [
+            'Formal training or degree in Fine Arts, Applied Arts, or a related field',
+            'Minimum 1 year of experience teaching or mentoring children',
+            'Strong command of at least one: Drawing, Painting, or Calligraphy',
+            'Comfortable on camera and using Zoom / Google Meet',
+            'Reliable internet connection (minimum 10 Mbps)',
+            'Fluent in English; Hindi proficiency is a bonus',
+        ],
+        responsibilities: [
+            'Conduct live, interactive 45-minute classes for small groups (max 6 students)',
+            'Follow and adapt the Miimiko curriculum to individual student needs',
+            'Track student progress and share regular parent updates',
+            'Participate in monthly teacher training & peer review sessions',
+            'Contribute ideas and feedback to improve the curriculum',
+        ],
+    },
+    {
+        id: 'volunteer',
+        icon: '🙌',
+        iconClass: 'volunteer',
+        title: 'Community Volunteer',
+        tags: [
+            { label: 'Remote', cls: 'remote' },
+            { label: 'Flexible', cls: 'flexible' },
+            { label: 'Unpaid', cls: 'parttime' },
+        ],
+        summary: 'Support our mission by mentoring students, helping with community outreach, or assisting with events.',
+        requirements: [
+            'A genuine passion for children\'s education and creative development',
+            'Ability to commit a minimum of 4 hours per week',
+            'Strong communication and interpersonal skills',
+            'No art expertise required for coordination roles',
+            'Art knowledge welcomed but not mandatory',
+        ],
+        responsibilities: [
+            'Assist teachers during live class sessions as a class monitor',
+            'Support community outreach and social media campaigns',
+            'Mentor students outside class hours as an art buddy',
+            'Help organise virtual art exhibitions and student showcases',
+            'Represent Miimiko at online education fairs and events',
+        ],
+    },
+];
+
+const PROCESS = [
+    { icon: '📝', title: 'Apply', desc: 'Fill in the application form below. Tell us about yourself and your relationship with art.' },
+    { icon: '📞', title: 'Intro Call', desc: 'A friendly 20-minute call with our team to understand your experience and answer your questions.' },
+    { icon: '🎨', title: 'Demo Class', desc: 'Conduct a short live demo class with our evaluators acting as students. We look for warmth, clarity, and engagement.' },
+    { icon: '🚀', title: 'Onboard', desc: 'Orientation, curriculum training, and your first assigned batch. You\'re now part of the Miimiko family.' },
+];
+
+const PositionCard = ({ pos }) => {
+    const [open, setOpen] = useState(false);
+
+    return (
+        <div className="position-card animate-fadeInUp">
+            <div className="position-card-header" onClick={() => setOpen(o => !o)} aria-expanded={open}>
+                <div className="position-card-header-left">
+                    <div className={`position-icon ${pos.iconClass}`}>{pos.icon}</div>
+                    <div>
+                        <div className="position-title">{pos.title}</div>
+                        <div className="position-tags">
+                            {pos.tags.map((t, i) => (
+                                <span key={i} className={`position-tag ${t.cls}`}>{t.label}</span>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                    <span style={{ fontSize: '0.92rem', color: 'var(--text-muted)', maxWidth: 320, display: 'none' }}
+                        className="position-summary">{pos.summary}</span>
+                    <Button
+                        variant={pos.iconClass === 'expert' ? 'primary' : 'outline'}
+                        size="sm"
+                        onClick={e => { e.stopPropagation(); document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' }); }}
+                    >
+                        Apply Now
+                    </Button>
+                    <span style={{ color: 'var(--maroon)', fontSize: '1.2rem', transition: 'transform 0.3s', transform: open ? 'rotate(180deg)' : 'none' }}>▾</span>
+                </div>
+            </div>
+
+            {open && (
+                <div className="position-card-body animate-fadeIn">
+                    <div>
+                        <div className="position-section-title">Requirements</div>
+                        <div className="position-list">
+                            {pos.requirements.map((r, i) => (
+                                <div key={i} className="position-list-item">{r}</div>
+                            ))}
+                        </div>
+                    </div>
+                    <div>
+                        <div className="position-section-title">Responsibilities</div>
+                        <div className="position-list">
+                            {pos.responsibilities.map((r, i) => (
+                                <div key={i} className="position-list-item">{r}</div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+const Careers = () => (
+    <main>
+
+        {/* ── Page Hero ── */}
+        <section className="page-hero">
+            <div className="page-hero-bg-pattern" />
+            <div className="container">
+                <div className="page-hero-content animate-fadeInUp">
+                    <nav className="page-hero-breadcrumb">
+                        <Link to="/">Home</Link><span className="sep">›</span>
+                        <span className="current">Careers</span>
+                    </nav>
+                    <div className="page-hero-eyebrow">🚀 Join the Team</div>
+                    <h1 className="page-hero-title">
+                        Teach Art. Change Lives.<br /><span>Work From Anywhere.</span>
+                    </h1>
+                    <p className="page-hero-desc">
+                        We're looking for passionate artists and educators who believe every child deserves
+                        a creative education. Join a global team doing meaningful work from the comfort of home.
+                    </p>
+                    <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                        <Button variant="gold" onClick={() => document.getElementById('apply-form')?.scrollIntoView({ behavior: 'smooth' })} arrow size="lg">
+                            Apply Now
+                        </Button>
+                        <Button variant="outline-gold" onClick={() => document.getElementById('open-roles')?.scrollIntoView({ behavior: 'smooth' })} size="lg">
+                            See Open Roles
+                        </Button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* ── Why Join ── */}
+        <section className="careers-why">
+            <div className="container">
+                <div className="text-center animate-fadeInUp">
+                    <span className="section-label">✨ Why Miimiko</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+                        A Team Worth <span style={{ color: 'var(--maroon)' }}>Joining</span>
+                    </h2>
+                    <p className="section-sub" style={{ margin: '0 auto' }}>
+                        We don't just hire teachers — we build careers around your life, not against it
+                    </p>
+                </div>
+                <div className="careers-why-grid">
+                    {WHY_JOIN.map((item, i) => (
+                        <div key={i} className={`careers-why-card animate-fadeInUp delay-${(i % 3) * 100 + 100}`}>
+                            <span className="careers-why-icon">{item.icon}</span>
+                            <h4>{item.title}</h4>
+                            <p>{item.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* ── Open Positions ── */}
+        <section className="careers-positions" id="open-roles">
+            <div className="container">
+                <div className="text-center animate-fadeInUp">
+                    <span className="section-label">📋 Open Roles</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+                        Current <span style={{ color: 'var(--maroon)' }}>Openings</span>
+                    </h2>
+                    <p className="section-sub" style={{ margin: '0 auto' }}>
+                        Click any role to expand requirements and responsibilities
+                    </p>
+                </div>
+                <div style={{ marginTop: '3.5rem' }}>
+                    {POSITIONS.map(pos => <PositionCard key={pos.id} pos={pos} />)}
+                </div>
+            </div>
+        </section>
+
+        {/* ── Application Process ── */}
+        <section className="careers-process">
+            <div className="container">
+                <div className="text-center animate-fadeInUp">
+                    <span className="section-label">🗺️ The Journey</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+                        How the <span style={{ color: 'var(--maroon)' }}>Application</span> Works
+                    </h2>
+                    <p className="section-sub" style={{ margin: '0 auto' }}>
+                        A simple, transparent process from application to your first class
+                    </p>
+                </div>
+                <div className="process-steps">
+                    {PROCESS.map((step, i) => (
+                        <div key={i} className={`process-step animate-fadeInUp delay-${i * 100 + 100}`}>
+                            <div className="process-step-circle">{step.icon}</div>
+                            <div className="process-step-title">{step.title}</div>
+                            <p className="process-step-desc">{step.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* ── Application Form ── */}
+        <section style={{ padding: '7rem 0', background: 'var(--cream)' }} id="apply-form">
+            <div className="container">
+                <div className="text-center animate-fadeInUp" style={{ marginBottom: '3.5rem' }}>
+                    <span className="section-label">📝 Apply</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+                        Ready to <span style={{ color: 'var(--maroon)' }}>Join Us?</span>
+                    </h2>
+                    <p className="section-sub" style={{ margin: '0 auto' }}>
+                        Fill in the form and our team will reach out within 2 working days
+                    </p>
+                </div>
+                <div style={{ maxWidth: 780, margin: '0 auto' }}>
+                    <div className="contact-form-card animate-scaleIn">
+                        <div className="contact-form-header">
+                            <h3>Career Application</h3>
+                            <p>Tell us about yourself and why you'd like to be part of Miimiko.</p>
+                        </div>
+                        <ContactForm prefillInquiry="Career / Teaching" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* ── Bottom CTA ── */}
+        <section style={{ padding: '5rem 0', background: 'var(--grad-maroon)', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+            <div className="creative-blob" style={{ width: 300, height: 300, background: 'rgba(255,200,87,0.07)', top: -80, right: -60 }} />
+            <div className="container animate-fadeInUp">
+                <span className="section-label" style={{ background: 'rgba(255,200,87,0.12)', borderColor: 'rgba(255,200,87,0.3)', color: 'var(--gold)' }}>
+                    🤝 Any Questions?
+                </span>
+                <h2 className="section-title on-dark" style={{ fontSize: '2.6rem', margin: '1rem 0 0.75rem' }}>
+                    Not sure which role is right for you?
+                </h2>
+                <p className="section-sub on-dark" style={{ margin: '0 auto 2rem' }}>
+                    Write to us at <a href="mailto:careers@miimiko.com" style={{ color: 'var(--gold)', fontWeight: 700 }}>careers@miimiko.com</a> and we'll help you figure it out.
+                </p>
+                <Button variant="gold" to="/contact" arrow size="lg">Contact Us</Button>
+            </div>
+        </section>
+
+    </main>
+);
+
+export default Careers;

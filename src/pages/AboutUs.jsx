@@ -1,0 +1,263 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Button from '../components/layout/Button';
+
+const STATS = [
+    { num: '5,000+', label: 'Happy Students' },
+    { num: '50+', label: 'Countries Reached' },
+    { num: '4.9★', label: 'Average Rating' },
+    { num: '3', label: 'Signature Courses' },
+];
+
+const TEAM = [
+    {
+        avatar: '👩‍🎨',
+        name: 'Ananya Krishnan',
+        role: 'Founder & Creative Director',
+        bio: 'A graduate of NID Ahmedabad with 12 years of art education experience. Ananya built Miimiko on the belief that every child is a natural artist.',
+    },
+    {
+        avatar: '👨‍🏫',
+        name: 'Rahul Desai',
+        role: 'Head of Curriculum',
+        bio: 'Former art teacher at international schools in Singapore and Dubai. Rahul crafts every lesson to balance structure with creative exploration.',
+    },
+    {
+        avatar: '👩‍💻',
+        name: 'Priya Menon',
+        role: 'Head of Student Experience',
+        bio: 'Ensures every family has a seamless, joyful journey from first demo to graduation. Priya manages our global teacher team with warmth and rigour.',
+    },
+    {
+        avatar: '🧑‍🎓',
+        name: 'Vikram Nair',
+        role: 'Lead — Drawing & Sketching',
+        bio: 'An award-winning illustrator who has worked with Penguin, Scholastic, and The Hindu. Vikram brings professional craft into every student session.',
+    },
+    {
+        avatar: '👩‍🎤',
+        name: 'Divya Rao',
+        role: 'Lead — Painting',
+        bio: 'Watercolour and acrylic specialist with exhibitions across Mumbai, Bangalore, and London. Divya teaches children to see colour as a language.',
+    },
+    {
+        avatar: '🧑‍✈️',
+        name: 'Karthik Iyer',
+        role: 'Lead — Calligraphy',
+        bio: 'Master calligrapher trained in both Eastern and Western scripts. Karthik brings patience and precision to every letterform class.',
+    },
+];
+
+const VALUES = [
+    { icon: '🌱', num: '01', title: 'Child-Led Curiosity', desc: 'We follow the child\'s spark, not a rigid syllabus. Curiosity is the curriculum.' },
+    { icon: '🔄', num: '02', title: 'Process Over Product', desc: 'The joy of making matters more than a perfect result. Mistakes are our best teachers.' },
+    { icon: '😄', num: '03', title: 'Joy as Method', desc: 'If a child isn\'t having fun, we\'re doing it wrong. Delight and rigour go hand in hand.' },
+    { icon: '🌍', num: '04', title: 'Global Perspective', desc: 'Students encounter art from every culture — building empathy that lasts a lifetime.' },
+    { icon: '🧠', num: '05', title: 'Whole-Brain Learning', desc: 'Art activates both analytical and creative thinking, improving performance across all subjects.' },
+    { icon: '🤝', num: '06', title: 'Community & Belonging', desc: 'Every child belongs here. Our classrooms celebrate every background, ability, and style.' },
+];
+
+const AboutUs = () => (
+    <main>
+
+        {/* ── Page Hero ── */}
+        <section className="page-hero">
+            <div className="page-hero-bg-pattern" />
+            <div className="container">
+                <div className="page-hero-content animate-fadeInUp">
+                    <nav className="page-hero-breadcrumb">
+                        <Link to="/">Home</Link><span className="sep">›</span>
+                        <span className="current">About Us</span>
+                    </nav>
+                    <div className="page-hero-eyebrow">✦ Our Story</div>
+                    <h1 className="page-hero-title">
+                        We're on a Mission to<br /><span>Unlock Every Child's</span><br />Creative Potential
+                    </h1>
+                    <p className="page-hero-desc">
+                        Miimiko began with a simple belief — that art education is not a luxury but a
+                        fundamental right for every child, everywhere on earth.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        {/* ── Our Story ── */}
+        <section className="about-story">
+            <div className="container">
+                <div className="about-story-grid">
+
+                    {/* Visual */}
+                    <div className="about-story-visual animate-slideInLeft">
+                        <div className="about-story-img-wrap">
+                            {/*
+                Replace the emoji below with a real image:
+                <img src={new URL('../assets/about-story.jpg', import.meta.url).href} alt="Our story" style={{ width:'100%', height:'100%', objectFit:'cover' }} />
+              */}
+                            🦉
+                        </div>
+                        <div className="about-story-badge">
+                            <span className="badge-num">2019</span>
+                            <span className="badge-text">Founded with love</span>
+                        </div>
+                    </div>
+
+                    {/* Text */}
+                    <div className="about-story-text animate-slideInRight">
+                        <span className="section-label">📖 How It Started</span>
+                        <h2 style={{ marginTop: '1rem' }}>
+                            A Classroom of <em>One</em> That Grew Into a<br />Global Movement
+                        </h2>
+                        <p>
+                            Miimiko started in 2019 in a tiny Mumbai apartment where our founder, Ananya Krishnan,
+                            taught her niece how to draw. Within a week, the neighbour's children wanted in.
+                            Within a month, word had spread to families across the city.
+                        </p>
+                        <p>
+                            Ananya realised something powerful: parents everywhere were searching for art education
+                            that went beyond copying pictures from YouTube. They wanted structure, progression, and
+                            teachers who genuinely understood child development.
+                        </p>
+                        <p>
+                            So she built exactly that. What started as four students on a video call is now a thriving
+                            academy with 5,000+ students across 50+ countries, a team of certified art educators, and
+                            a curriculum recognised by parents for its depth, warmth, and results.
+                        </p>
+                        <p>
+                            The name <strong style={{ color: 'var(--maroon)' }}>Miimiko</strong> comes from a word
+                            meaning "to imitate with heart" — because all art begins with looking closely at the world
+                            and then making it your own.
+                        </p>
+                        <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                            <Button variant="primary" to="/contact" arrow>Book Free Demo</Button>
+                            <Button variant="outline" to="/courses">View Courses</Button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* ── Stats Strip ── */}
+        <section className="about-stats">
+            <div className="creative-blob" style={{ width: 300, height: 300, background: 'rgba(255,200,87,0.06)', top: -80, right: -60 }} />
+            <div className="container">
+                <div className="about-stats-grid">
+                    {STATS.map((s, i) => (
+                        <div key={i} className={`about-stat-cell animate-fadeInUp delay-${i * 100 + 100}`}>
+                            <div className="about-stat-num">{s.num}</div>
+                            <div className="about-stat-label">{s.label}</div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* ── Mission & Vision ── */}
+        <section className="about-mission">
+            <div className="container">
+                <div className="text-center animate-fadeInUp">
+                    <span className="section-label">🎯 Purpose</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+                        Mission & <span style={{ color: 'var(--maroon)' }}>Vision</span>
+                    </h2>
+                    <p className="section-sub" style={{ margin: '0 auto' }}>
+                        Two sides of the same brushstroke
+                    </p>
+                </div>
+                <div className="mission-vision-grid">
+                    <div className="mv-card mission animate-slideInLeft">
+                        <span className="mv-card-icon">🎯</span>
+                        <h3>Our Mission</h3>
+                        <p>
+                            To make world-class art education accessible to every child regardless of geography,
+                            background, or prior experience — through live, expert-led online classes that build
+                            not just artistic skill, but cognitive strength, emotional resilience, and creative confidence.
+                        </p>
+                    </div>
+                    <div className="mv-card vision animate-slideInRight">
+                        <span className="mv-card-icon">🔭</span>
+                        <h3>Our Vision</h3>
+                        <p>
+                            A world where every child grows up knowing they are creative. Where art is not a
+                            separate subject but a way of thinking, seeing, and solving — woven into the fabric of
+                            how young minds approach every challenge they face in school and in life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        {/* ── Team ── */}
+        <section className="about-team">
+            <div className="container">
+                <div className="text-center animate-fadeInUp">
+                    <span className="section-label">👥 The People</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+                        Meet the <span style={{ color: 'var(--maroon)' }}>Team Behind</span> Miimiko
+                    </h2>
+                    <p className="section-sub" style={{ margin: '0 auto' }}>
+                        Artists, educators, and child-development advocates — united by one purpose
+                    </p>
+                </div>
+                <div className="team-grid">
+                    {TEAM.map((member, i) => (
+                        <div key={i} className={`team-card animate-fadeInUp delay-${(i % 3) * 100 + 100}`}>
+                            <div className="team-avatar">{member.avatar}</div>
+                            <div className="team-name">{member.name}</div>
+                            <div className="team-role">{member.role}</div>
+                            <p className="team-bio">{member.bio}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* ── Values ── */}
+        <section className="about-values">
+            <div className="creative-blob" style={{ width: 280, height: 280, background: 'rgba(122,0,75,0.04)', bottom: -60, right: -60 }} />
+            <div className="container">
+                <div className="text-center animate-fadeInUp">
+                    <span className="section-label">💡 What Drives Us</span>
+                    <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
+                        Our Core <span style={{ color: 'var(--maroon)' }}>Values</span>
+                    </h2>
+                    <p className="section-sub" style={{ margin: '0 auto' }}>
+                        Principles we live by in every classroom, every call, every brushstroke
+                    </p>
+                </div>
+                <div className="values-grid">
+                    {VALUES.map((v, i) => (
+                        <div key={i} className={`value-card animate-fadeInUp delay-${(i % 3) * 100 + 100}`}>
+                            <div className="value-num">{v.num}</div>
+                            <span className="value-icon">{v.icon}</span>
+                            <div className="value-title">{v.title}</div>
+                            <p className="value-desc">{v.desc}</p>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+
+        {/* ── CTA ── */}
+        <section style={{ padding: '6rem 0', background: 'var(--grad-maroon)', position: 'relative', overflow: 'hidden' }}>
+            <div className="creative-blob" style={{ width: 350, height: 350, background: 'rgba(255,200,87,0.07)', top: -80, right: -80 }} />
+            <div className="container text-center animate-fadeInUp">
+                <span className="section-label" style={{ background: 'rgba(255,200,87,0.12)', borderColor: 'rgba(255,200,87,0.3)', color: 'var(--gold)' }}>
+                    🎨 Start the Journey
+                </span>
+                <h2 className="section-title on-dark" style={{ fontSize: '3rem', margin: '1rem 0 0.75rem' }}>
+                    Ready to See the <span style={{ color: 'var(--gold)' }}>Difference?</span>
+                </h2>
+                <p className="section-sub on-dark" style={{ margin: '0 auto 2.5rem' }}>
+                    Book a completely free demo class — no commitment, no credit card, just pure creative joy.
+                </p>
+                <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                    <Button variant="gold" to="/contact" arrow size="lg">Book Free Demo</Button>
+                    <Button variant="outline-gold" to="/courses" size="lg">Explore Courses</Button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+);
+
+export default AboutUs;
