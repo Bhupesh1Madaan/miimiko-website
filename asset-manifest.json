@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/miimiko-website/static/css/main.58edbe19.css",
+    "main.js": "/miimiko-website/static/js/main.17dcc187.js",
+    "static/js/453.ec48e21f.chunk.js": "/miimiko-website/static/js/453.ec48e21f.chunk.js",
+    "index.html": "/miimiko-website/index.html",
+    "main.58edbe19.css.map": "/miimiko-website/static/css/main.58edbe19.css.map",
+    "main.17dcc187.js.map": "/miimiko-website/static/js/main.17dcc187.js.map",
+    "453.ec48e21f.chunk.js.map": "/miimiko-website/static/js/453.ec48e21f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.58edbe19.css",
+    "static/js/main.17dcc187.js"
+  ]
+}
