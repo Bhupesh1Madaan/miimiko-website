@@ -34,7 +34,7 @@ const FAQS = [
     },
     {
         q: 'Do you provide a certificate at the end of the course?',
-        a: 'Yes! Every student who completes a course receives a digital Certificate of Completion from Miimiko Creative Academy. Advanced students also have the option to build a curated digital portfolio.',
+        a: 'Yes! Every student who completes a course receives a digital Certificate of Completion from Miimiko Minds. Advanced students also have the option to build a curated digital portfolio.',
     },
 ];
 
@@ -107,7 +107,7 @@ const ContactUs = () => (
                                 <div className="contact-detail-icon">📧</div>
                                 <div className="contact-detail-body">
                                     <strong>Email Us</strong>
-                                    <a href="mailto:hello@miimiko.com">hello@miimiko.com</a>
+                                    <a href="mailto:support@miimiko.com">support@miimiko.com</a>
                                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '2px' }}>
                                         Usually replies within 4–6 hours
                                     </span>
@@ -117,7 +117,7 @@ const ContactUs = () => (
                                 <div className="contact-detail-icon">💬</div>
                                 <div className="contact-detail-body">
                                     <strong>WhatsApp</strong>
-                                    <a href="https://wa.me/919876543210">+91 98765 43210</a>
+                                    <a href="https://wa.me/918799757218">+91 87997 57218</a>
                                     <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '2px' }}>
                                         Tap to chat directly
                                     </span>
@@ -127,15 +127,15 @@ const ContactUs = () => (
                                 <div className="contact-detail-icon">📞</div>
                                 <div className="contact-detail-body">
                                     <strong>Call Us</strong>
-                                    <a href="tel:+919876543210">+91 98765 43210</a>
+                                    <a href="tel:+918799757218">+91 87997 57218</a>
                                 </div>
                             </div>
                             <div className="contact-detail">
                                 <div className="contact-detail-icon">📸</div>
                                 <div className="contact-detail-body">
                                     <strong>Instagram</strong>
-                                    <a href="https://instagram.com/miimiko" target="_blank" rel="noopener noreferrer">
-                                        @miimiko
+                                    <a href="https://instagram.com/miimikoart" target="_blank" rel="noopener noreferrer">
+                                        @miimikoart
                                     </a>
                                 </div>
                             </div>
@@ -167,7 +167,7 @@ const ContactUs = () => (
                             </p>
                             <Button
                                 variant="gold"
-                                href="https://wa.me/919876543210?text=Hi%20Miimiko!%20I%20want%20to%20book%20a%20free%20demo%20class."
+                                href="https://wa.me/918799757218?text=Hi%20Miimiko%20Minds!%20I%20want%20to%20book%20a%20free%20demo%20class."
                                 arrow
                                 style={{ width: '100%', justifyContent: 'center' }}
                             >

@@ -237,7 +237,7 @@ const Courses = () => (
         </section>
 
         {/* ── FAQ ── */}
-        <section style={{ padding: '7rem 0', background: 'var(--white)' }}>
+        <section style={{ padding: '7rem 0', background: 'transparent' }}>
             <div className="container">
                 <div className="text-center animate-fadeInUp">
                     <span className="section-label">❓ Quick Answers</span>

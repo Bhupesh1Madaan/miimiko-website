@@ -109,11 +109,11 @@ const Header = () => {
             <div className="header-inner">
 
                 {/* ── Logo ── */}
-                <Link to="/" className="header-logo" aria-label="Miimiko Home">
-                    <div className="header-logo-icon">🎨</div>
+                <Link to="/" className="header-logo" aria-label="Miimiko Minds Home">
+                    <div className="header-logo-icon"><img src="/src/assets/logo.png" alt="Miimiko Minds Logo" /></div>
                     <div className="header-logo-text">
-                        <span className="header-logo-name">Miimiko</span>
-                        <span className="header-logo-tagline">Creative Academy</span>
+                        <span className="header-logo-name">Miimiko Minds</span>
+                        <span className="header-logo-tagline">Unfold your creative vision</span>
                     </div>
                 </Link>
 
@@ -208,7 +208,7 @@ const Header = () => {
                                     cursor: 'pointer',
                                     userSelect: 'none',
                                     background: mobileCoursesOpen
-                                        ? 'rgba(122,0,75,0.05)' : 'transparent',
+                                        ? 'rgba(60, 98, 174, 0.05)' : 'transparent',
                                     transition: 'background var(--duration-fast)',
                                 }}
                             >
@@ -230,7 +230,7 @@ const Header = () => {
                                 <div style={{
                                     paddingLeft: '1rem',
                                     marginLeft: '1rem',
-                                    borderLeft: '2px solid rgba(122,0,75,0.12)',
+                                    borderLeft: '2px solid rgba(60, 98, 174, 0.12)',
                                     marginBottom: '0.25rem',
                                     display: 'flex',
                                     flexDirection: 'column',
@@ -240,6 +240,7 @@ const Header = () => {
                                         <Link
                                             key={course.id}
                                             to={`/courses/${course.id}`}
+                                            onClick={() => setMenuOpen(false)}
                                             style={{
                                                 display: 'flex',
                                                 alignItems: 'center',
@@ -274,6 +275,7 @@ const Header = () => {
 
                                     <Link
                                         to="/courses"
+                                        onClick={() => setMenuOpen(false)}
                                         style={{
                                             display: 'block',
                                             padding: '0.6rem 0.75rem',
@@ -293,6 +295,7 @@ const Header = () => {
                         <NavLink
                             key={to}
                             to={to}
+                            onClick={() => setMenuOpen(false)}
                             className={({ isActive }) =>
                                 `mobile-nav-link${isActive ? ' active' : ''}`
                             }
@@ -304,10 +307,10 @@ const Header = () => {
 
                 {/* Mobile CTAs */}
                 <div className="mobile-menu-cta">
-                    <Button variant="outline" to="/contact" style={{ width: '100%', justifyContent: 'center' }}>
+                    <Button variant="outline" to="/contact" onClick={() => setMenuOpen(false)} style={{ width: '100%', justifyContent: 'center' }}>
                         Raise a Query
                     </Button>
-                    <Button variant="gold" to="/contact" arrow style={{ width: '100%', justifyContent: 'center' }}>
+                    <Button variant="gold" to="/contact" arrow onClick={() => setMenuOpen(false)} style={{ width: '100%', justifyContent: 'center' }}>
                         Book Free Demo
                     </Button>
                 </div>

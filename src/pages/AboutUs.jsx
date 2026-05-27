@@ -14,7 +14,7 @@ const TEAM = [
         avatar: '👩‍🎨',
         name: 'Ananya Krishnan',
         role: 'Founder & Creative Director',
-        bio: 'A graduate of NID Ahmedabad with 12 years of art education experience. Ananya built Miimiko on the belief that every child is a natural artist.',
+        bio: 'A graduate of NID Ahmedabad with 12 years of art education experience. Ananya built Miimiko Minds on the belief that every child is a natural artist.',
     },
     {
         avatar: '👨‍🏫',
@@ -74,7 +74,7 @@ const AboutUs = () => (
                         We're on a Mission to<br /><span>Unlock Every Child's</span><br />Creative Potential
                     </h1>
                     <p className="page-hero-desc">
-                        Miimiko began with a simple belief — that art education is not a luxury but a
+                        Miimiko Minds began with a simple belief — that art education is not a luxury but a
                         fundamental right for every child, everywhere on earth.
                     </p>
                 </div>
@@ -108,7 +108,7 @@ const AboutUs = () => (
                             A Classroom of <em>One</em> That Grew Into a<br />Global Movement
                         </h2>
                         <p>
-                            Miimiko started in 2019 in a tiny Mumbai apartment where our founder, Ananya Krishnan,
+                            Miimiko Minds started in 2019 in a tiny Mumbai apartment where our founder, Ananya Krishnan,
                             taught her niece how to draw. Within a week, the neighbour's children wanted in.
                             Within a month, word had spread to families across the city.
                         </p>
@@ -192,7 +192,7 @@ const AboutUs = () => (
                 <div className="text-center animate-fadeInUp">
                     <span className="section-label">👥 The People</span>
                     <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
-                        Meet the <span style={{ color: 'var(--maroon)' }}>Team Behind</span> Miimiko
+                        Meet the <span style={{ color: 'var(--maroon)' }}>Team Behind</span> Miimiko Minds
                     </h2>
                     <p className="section-sub" style={{ margin: '0 auto' }}>
                         Artists, educators, and child-development advocates — united by one purpose

@@ -34,7 +34,7 @@ const POSITIONS = [
         ],
         responsibilities: [
             'Conduct live, interactive 45-minute classes for small groups (max 6 students)',
-            'Follow and adapt the Miimiko curriculum to individual student needs',
+            'Follow and adapt the Miimiko Minds curriculum to individual student needs',
             'Track student progress and share regular parent updates',
             'Participate in monthly teacher training & peer review sessions',
             'Contribute ideas and feedback to improve the curriculum',
@@ -63,7 +63,7 @@ const POSITIONS = [
             'Support community outreach and social media campaigns',
             'Mentor students outside class hours as an art buddy',
             'Help organise virtual art exhibitions and student showcases',
-            'Represent Miimiko at online education fairs and events',
+            'Represent Miimiko Minds at online education fairs and events',
         ],
     },
 ];
@@ -72,7 +72,7 @@ const PROCESS = [
     { icon: '📝', title: 'Apply', desc: 'Fill in the application form below. Tell us about yourself and your relationship with art.' },
     { icon: '📞', title: 'Intro Call', desc: 'A friendly 20-minute call with our team to understand your experience and answer your questions.' },
     { icon: '🎨', title: 'Demo Class', desc: 'Conduct a short live demo class with our evaluators acting as students. We look for warmth, clarity, and engagement.' },
-    { icon: '🚀', title: 'Onboard', desc: 'Orientation, curriculum training, and your first assigned batch. You\'re now part of the Miimiko family.' },
+    { icon: '🚀', title: 'Onboard', desc: 'Orientation, curriculum training, and your first assigned batch. You\'re now part of the Miimiko Minds family.' },
 ];
 
 const PositionCard = ({ pos }) => {
@@ -166,7 +166,7 @@ const Careers = () => (
         <section className="careers-why">
             <div className="container">
                 <div className="text-center animate-fadeInUp">
-                    <span className="section-label">✨ Why Miimiko</span>
+                    <span className="section-label">✨ Why Miimiko Minds</span>
                     <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
                         A Team Worth <span style={{ color: 'var(--maroon)' }}>Joining</span>
                     </h2>
@@ -244,7 +244,7 @@ const Careers = () => (
                     <div className="contact-form-card animate-scaleIn">
                         <div className="contact-form-header">
                             <h3>Career Application</h3>
-                            <p>Tell us about yourself and why you'd like to be part of Miimiko.</p>
+                            <p>Tell us about yourself and why you'd like to be part of Miimiko Minds.</p>
                         </div>
                         <ContactForm prefillInquiry="Career / Teaching" />
                     </div>

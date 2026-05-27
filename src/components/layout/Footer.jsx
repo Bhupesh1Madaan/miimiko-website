@@ -45,13 +45,11 @@ const Footer = () => {
                 {/* Brand column */}
                 <div>
                     <div className="footer-brand-logo">
-                        <div className="footer-brand-icon">🎨</div>
-                        <span className="footer-brand-name">ArtBloom</span>
+                        <div className="footer-brand-icon"><img src="/src/assets/logo.png" alt="Miimiko Logo" /></div>
+                        <span className="footer-brand-name">Miimiko Minds</span>
                     </div>
                     <p className="footer-brand-desc">
-                        We nurture creative thinkers and innovators aged 5–14 through
-                        online art education across 50+ countries. Every brushstroke
-                        builds a brighter future.
+                        Unfold your Creative Vision with Miimiko Minds - Your Gateway to Artistic Mastery. Join us to explore a world of creativity and transform your passion into skill.
                     </p>
                     <div className="footer-social">
                         {SOCIAL.map(({ label, href, title }) => (
@@ -98,22 +96,22 @@ const Footer = () => {
                 <div>
                     <h4 className="footer-col-title">Get In Touch</h4>
 
-                    <div className="footer-contact-item">
+                    {/* <div className="footer-contact-item">
                         <div className="footer-contact-icon">📍</div>
                         <span>Global Online Academy<br />Available Worldwide</span>
-                    </div>
+                    </div> */}
 
                     <div className="footer-contact-item">
                         <div className="footer-contact-icon">📧</div>
-                        <a href="mailto:hello@artbloom.com" style={{ color: 'inherit' }}>
-                            hello@artbloom.com
+                        <a href="mailto:support@miimiko.com" style={{ color: 'inherit' }}>
+                            support@miimiko.com
                         </a>
                     </div>
 
                     <div className="footer-contact-item">
                         <div className="footer-contact-icon">📞</div>
-                        <a href="tel:+919876543210" style={{ color: 'inherit' }}>
-                            +91 98765 43210
+                        <a href="tel:+918799757218" style={{ color: 'inherit' }}>
+                            +91 87997 57218
                         </a>
                     </div>
 
@@ -131,7 +129,7 @@ const Footer = () => {
             {/* ── Bottom bar ── */}
             <div className="footer-bottom">
                 <p className="footer-copyright">
-                    © {year} ArtBloom Creative Academy. All rights reserved.
+                    © {year} Miimiko Minds. All rights reserved.
                 </p>
                 <div className="footer-bottom-links">
                     <a href="/privacy" className="footer-bottom-link">Privacy Policy</a>

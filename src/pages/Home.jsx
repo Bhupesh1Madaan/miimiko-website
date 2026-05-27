@@ -95,7 +95,7 @@ const ENROLL_COURSES = [
 const TESTIMONIALS = [
     {
         stars: 5,
-        quote: 'My daughter used to be terribly shy. After just two months with Miimiko, she presents her artwork to the whole family with such pride. The transformation is unbelievable.',
+        quote: 'My daughter used to be terribly shy. After just two months with Miimiko Minds, she presents her artwork to the whole family with such pride. The transformation is unbelievable.',
         name: 'Priya Sharma',
         role: 'Mother of Aanya, 8',
         avatar: '👩',
@@ -123,7 +123,7 @@ const TESTIMONIALS = [
     },
     {
         stars: 5,
-        quote: 'We tried two other online art classes before Miimiko. Nothing comes close. The curriculum actually builds on itself — you can see the progress every single week.',
+        quote: 'We tried two other online art classes before Miimiko Minds. Nothing comes close. The curriculum actually builds on itself — you can see the progress every single week.',
         name: 'Meena Joshi',
         role: 'Mother of Sia, 9',
         avatar: '👩‍🦰',
@@ -293,7 +293,7 @@ const EnrollSection = () => {
                 <div className="text-center">
                     <span className="section-label">🎓 Start Today</span>
                     <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
-                        Enroll Your Child in <span style={{ color: 'var(--maroon)' }}>Minutes</span>
+                        Enroll Your Child in <span >Minutes</span>
                     </h2>
                     <p className="section-sub" style={{ margin: '0 auto' }}>
                         Pick your child's age, choose a course, and we'll handle everything else.
@@ -345,7 +345,7 @@ const EnrollSection = () => {
                         {/* ── Step 2: Course ── */}
                         <div className="enroll-step">
                             <h3 className="age-selector-title">
-                                Perfect! Now pick a course for your {selectedAge}-old
+                                Perfect! Now pick one or more courses for your {selectedAge}-old
                             </h3>
                             <p className="age-selector-sub">All courses have been adapted for {selectedAge}</p>
 
@@ -426,7 +426,7 @@ const Home = () => {
                     <div className="text-center animate-fadeInUp">
                         <span className="section-label">📚 What We Teach</span>
                         <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
-                            Our <span style={{ color: 'var(--maroon)' }}>Signature Courses</span>
+                            Our <span >Signature Courses</span>
                         </h2>
                         <p className="section-sub" style={{ margin: '0 auto' }}>
                             Each course is crafted to develop specific creative and cognitive abilities
@@ -460,7 +460,7 @@ const Home = () => {
                     <div className="text-center animate-fadeInUp" style={{ marginBottom: '4rem' }}>
                         <span className="section-label">🌟 Our Approach</span>
                         <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
-                            More Than Art — <span style={{ color: 'var(--maroon)' }}>We Grow Humans</span>
+                            More Than Art — <span >We Grow Humans</span>
                         </h2>
                         <p className="section-sub" style={{ margin: '0 auto' }}>
                             Every brushstroke and pencil line is building something bigger than a drawing
@@ -486,11 +486,11 @@ const Home = () => {
                                 </div>
                             ))}
 
-                            <div style={{ marginTop: '1.5rem' }}>
+                            {/* <div style={{ marginTop: '1.5rem' }}>
                                 <Button variant="primary" to="/about" arrow>
                                     Our Full Philosophy
                                 </Button>
-                            </div>
+                            </div> */}
                         </div>
 
                         {/* Right: Personality */}
@@ -533,7 +533,7 @@ const Home = () => {
                             <h2 className="miimiko-title mt-sm">
                                 Book Your First<br />
                                 Free Class with<br />
-                                <span>Miimiko</span>
+                                <span>Miimiko Minds</span>
                             </h2>
                             <p className="miimiko-desc">
                                 Before you commit to anything, let your child experience the magic firsthand.
@@ -599,7 +599,7 @@ const Home = () => {
                     <div className="text-center animate-fadeInUp">
                         <span className="section-label">❤️ Parent Stories</span>
                         <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
-                            What Proud Parents <span style={{ color: 'var(--maroon)' }}>Are Saying</span>
+                            What Proud Parents <span >Are Saying</span>
                         </h2>
                         <p className="section-sub" style={{ margin: '0 auto' }}>
                             Real words from real families across the globe
@@ -634,7 +634,7 @@ const Home = () => {
                     <div className="text-center animate-fadeInUp" style={{ marginBottom: '4rem' }}>
                         <span className="section-label">📖 What We Believe</span>
                         <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
-                            Our <span style={{ color: 'var(--maroon)' }}>Philosophy</span>
+                            Our <span>Approach</span>
                         </h2>
                     </div>
 
@@ -645,7 +645,7 @@ const Home = () => {
                                 "Every child is born an artist. Our only job is to make sure they don't forget that
                                 as they grow up. Art is not a subject — it is the language of the soul."
                             </p>
-                            <p className="philosophy-quote-attribution">— The Miimiko Teaching Manifesto</p>
+                            <p className="philosophy-quote-attribution">— The Miimiko Minds Teaching Manifesto</p>
 
                             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
                                 <Button variant="outline-gold" to="/about" arrow>
@@ -688,9 +688,9 @@ const Home = () => {
             <section className="join-section">
                 <div className="container">
                     <div className="text-center animate-fadeInUp">
-                        <span className="section-label">🤝 Be Part of Miimiko</span>
+                        <span className="section-label">🤝 Be Part of Miimiko Minds</span>
                         <h2 className="section-title" style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>
-                            Join Our <span style={{ color: 'var(--maroon)' }}>Growing Family</span>
+                            Join Our <span >Growing Family</span>
                         </h2>
                         <p className="section-sub" style={{ margin: '0 auto' }}>
                             Whether you're an art expert or a passionate volunteer — there's a place for you here
