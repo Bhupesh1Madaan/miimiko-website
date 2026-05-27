@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import ContactForm from '../components/forms/ContactForm';
+import TeacherApplicationForm from '../components/forms/TeacherApplicationForm';
 import Button from '../components/layout/Button';
 
 const WHY_JOIN = [
@@ -246,7 +246,7 @@ const Careers = () => (
                             <h3>Career Application</h3>
                             <p>Tell us about yourself and why you'd like to be part of Miimiko Minds.</p>
                         </div>
-                        <ContactForm prefillInquiry="Career / Teaching" />
+                        <TeacherApplicationForm />
                     </div>
                 </div>
             </div>

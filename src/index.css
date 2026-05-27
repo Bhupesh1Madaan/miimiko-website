@@ -1,7 +1,7 @@
 /* ============================================================
    GLOBAL RESET & BASE
    ============================================================ */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 *,
 *::before,
@@ -49,8 +49,10 @@
   --radius-pill: 50px;
 
   /* ── Typography ── */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'DM Sans', system-ui, sans-serif;
+  --font-display: 'Raleway', 'Philosopher', system-ui, sans-serif;
+  --font-body: 'Philosopher', system-ui, sans-serif;
+  --font-philosopher: 'Philosopher', system-ui, sans-serif;
+  --font-raleway: 'Raleway', system-ui, sans-serif;
 
   /* ── Transitions ── */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
@@ -451,11 +453,13 @@ ol {
 }
 
 .header-logo-tagline {
-  font-size: 0.7rem;
-  font-weight: 500;
+  font-family: var(--font-raleway);
+  font-size: 0.72rem;
+  font-weight: 600;
   color: var(--text-muted);
-  letter-spacing: 0.5px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
+  margin-top: 3px;
 }
 
 /* Nav */
@@ -1434,15 +1438,16 @@ ol {
    ============================================================ */
 .section-label {
   display: inline-block;
-  font-size: 0.8rem;
+  font-family: var(--font-raleway);
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   color: var(--maroon);
   background: rgba(60, 98, 174, 0.07);
   border: 1px solid rgba(60, 98, 174, 0.15);
   border-radius: var(--radius-pill);
-  padding: 0.3rem 1rem;
+  padding: 0.35rem 1.15rem;
   margin-bottom: 1rem;
 }
 

@@ -1,0 +1,233 @@
+import React, { useState } from 'react';
+import Button from '../layout/Button';
+
+const SPECIALIZATION_OPTIONS = [
+    'Drawing',
+    'Painting',
+    'Calligraphy',
+    'Sketching & Shading',
+    'Digital Art',
+    'Craft & Origami',
+    'Multiple Mediums',
+    'Other',
+];
+
+const EXPERIENCE_OPTIONS = [
+    'Less than 1 Year',
+    '1–3 Years',
+    '3–5 Years',
+    '5+ Years',
+];
+
+const validate = (fields) => {
+    const errors = {};
+    if (!fields.fullName.trim()) errors.fullName = 'Please enter your full name.';
+    if (!fields.email.trim()) errors.email = 'Please enter your email.';
+    else if (!/\S+@\S+\.\S+/.test(fields.email)) errors.email = 'Please enter a valid email.';
+    
+    if (!fields.phone.trim()) errors.phone = 'Please enter your phone number.';
+    if (!fields.country.trim()) errors.country = 'Please enter your country.';
+    if (!fields.specialization) errors.specialization = 'Please select your specialization.';
+    if (!fields.experience) errors.experience = 'Please select your teaching experience.';
+    
+    if (!fields.portfolio.trim()) {
+        errors.portfolio = 'Please enter your portfolio or resume link.';
+    } else if (!/^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/.test(fields.portfolio)) {
+        errors.portfolio = 'Please enter a valid URL.';
+    }
+    
+    if (!fields.aboutMe.trim()) errors.aboutMe = 'Please write a short statement about your experience.';
+    if (!fields.onlineComfortable) errors.onlineComfortable = 'You must confirm comfort with online teaching.';
+    
+    return errors;
+};
+
+const TeacherApplicationForm = () => {
+    const [fields, setFields] = useState({
+        fullName: '',
+        email: '',
+        phone: '',
+        country: '',
+        specialization: '',
+        experience: '',
+        portfolio: '',
+        aboutMe: '',
+        onlineComfortable: false,
+    });
+
+    const [errors, setErrors] = useState({});
+    const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const set = (key) => (e) => {
+        const val = e.target.type === 'checkbox' ? e.target.checked : e.target.value;
+        setFields(prev => ({ ...prev, [key]: val }));
+        if (errors[key]) setErrors(prev => ({ ...prev, [key]: '' }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const errs = validate(fields);
+        if (Object.keys(errs).length) { setErrors(errs); return; }
+        setLoading(true);
+        // Simulated submission
+        setTimeout(() => {
+            setLoading(false);
+            setSubmitted(true);
+        }, 1400);
+    };
+
+    if (submitted) {
+        return (
+            <div className="form-success animate-scaleIn">
+                <div className="form-success-icon">🎉</div>
+                <h4>Application Submitted Successfully!</h4>
+                <p>
+                    Thank you for applying to teach at Miimiko Minds. Our academic board will review
+                    your portfolio/resume and contact you via email or WhatsApp within 2–3 working days
+                    for the next steps (introductory call).
+                </p>
+                <Button variant="primary" onClick={() => { setSubmitted(false); setFields({ fullName: '', email: '', phone: '', country: '', specialization: '', experience: '', portfolio: '', aboutMe: '', onlineComfortable: false }); }}>
+                    Submit Another Application
+                </Button>
+            </div>
+        );
+    }
+
+    const F = ({ name, label, required, children }) => (
+        <div className="form-field">
+            <label className="form-label">{label}{required && <span>*</span>}</label>
+            {children}
+            {errors[name] && <span className="form-error-msg">{errors[name]}</span>}
+        </div>
+    );
+
+    return (
+        <form onSubmit={handleSubmit} noValidate>
+            <div className="contact-form-body">
+
+                <div className="form-row">
+                    <F name="fullName" label="Full Name" required>
+                        <input
+                            className={`form-input${errors.fullName ? ' error' : ''}`}
+                            type="text"
+                            placeholder="e.g. Elena Rostova"
+                            value={fields.fullName}
+                            onChange={set('fullName')}
+                            autoComplete="name"
+                        />
+                    </F>
+                    <F name="email" label="Email Address" required>
+                        <input
+                            className={`form-input${errors.email ? ' error' : ''}`}
+                            type="email"
+                            placeholder="elena@example.com"
+                            value={fields.email}
+                            onChange={set('email')}
+                            autoComplete="email"
+                        />
+                    </F>
+                </div>
+
+                <div className="form-row">
+                    <F name="phone" label="Phone / WhatsApp" required>
+                        <input
+                            className={`form-input${errors.phone ? ' error' : ''}`}
+                            type="tel"
+                            placeholder="e.g. +1 555 0199"
+                            value={fields.phone}
+                            onChange={set('phone')}
+                            autoComplete="tel"
+                        />
+                    </F>
+                    <F name="country" label="Country of Residence" required>
+                        <input
+                            className={`form-input${errors.country ? ' error' : ''}`}
+                            type="text"
+                            placeholder="e.g. United Kingdom"
+                            value={fields.country}
+                            onChange={set('country')}
+                        />
+                    </F>
+                </div>
+
+                <div className="form-row">
+                    <F name="specialization" label="Primary Specialization" required>
+                        <div className="form-select-wrap">
+                            <select
+                                className={`form-select${errors.specialization ? ' error' : ''}`}
+                                value={fields.specialization}
+                                onChange={set('specialization')}
+                            >
+                                <option value="">Select medium…</option>
+                                {SPECIALIZATION_OPTIONS.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                            </select>
+                        </div>
+                    </F>
+                    <F name="experience" label="Teaching Experience" required>
+                        <div className="form-select-wrap">
+                            <select
+                                className={`form-select${errors.experience ? ' error' : ''}`}
+                                value={fields.experience}
+                                onChange={set('experience')}
+                            >
+                                <option value="">Select duration…</option>
+                                {EXPERIENCE_OPTIONS.map(opt => <option key={opt} value={opt}>{opt}</option>)}
+                            </select>
+                        </div>
+                    </F>
+                </div>
+
+                <F name="portfolio" label="Portfolio or Resume Link (Google Drive, Behance, Website, etc.)" required>
+                    <input
+                        className={`form-input${errors.portfolio ? ' error' : ''}`}
+                        type="url"
+                        placeholder="https://behance.net/yourname or resume link..."
+                        value={fields.portfolio}
+                        onChange={set('portfolio')}
+                    />
+                </F>
+
+                <F name="aboutMe" label="Tell us about your art background & teaching philosophy" required>
+                    <textarea
+                        className={`form-textarea${errors.aboutMe ? ' error' : ''}`}
+                        placeholder="Write a brief intro about your art journey, why you love teaching kids, and your approach to fostering creativity..."
+                        value={fields.aboutMe}
+                        onChange={set('aboutMe')}
+                        rows={4}
+                    />
+                </F>
+
+                <div className="form-field checkbox-field" style={{ margin: '1rem 0 1.5rem' }}>
+                    <label style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', cursor: 'pointer', fontSize: '0.92rem', color: 'var(--text-secondary)' }}>
+                        <input
+                            type="checkbox"
+                            checked={fields.onlineComfortable}
+                            onChange={set('onlineComfortable')}
+                            style={{ width: '18px', height: '18px', cursor: 'pointer', accentColor: 'var(--maroon)' }}
+                        />
+                        <span>I have a laptop, webcam, and high-speed internet, and I am comfortable teaching online. *</span>
+                    </label>
+                    {errors.onlineComfortable && <span className="form-error-msg" style={{ display: 'block', marginTop: '0.25rem' }}>{errors.onlineComfortable}</span>}
+                </div>
+
+                <Button
+                    type="submit"
+                    variant="gold"
+                    size="lg"
+                    arrow
+                    style={{ width: '100%', justifyContent: 'center' }}
+                    disabled={loading}
+                >
+                    {loading ? '✦ Submitting Application…' : 'Submit Application'}
+                </Button>
+
+                <p style={{ fontSize: '0.78rem', color: 'var(--text-muted)', textAlign: 'center', marginTop: '-0.5rem' }}>
+                    🔒 We protect your data and contact details. They are only used for this recruitment process.
+                </p>
+            </div>
+        </form>
+    );
+};
+
+export default TeacherApplicationForm;
